@@ -1,47 +1,56 @@
 const express = require("express");
-const morgan = require("morgan");
-
+const Athelete = require("./models/athelete")
 const app = express();
 require('dotenv').config();
-
 
 //Datanase conection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-main().catch((err) => console.log(err));
 async function main() {
-  await mongoose.connect(process.env.MONGO_CNN);
+  await mongoose.connect("mongodb+srv://yerayherreria:asier00ye@cluster0.hce5dpg.mongodb.net/");
   console.log("Conectado")
 }
 
+main().catch((err) => console.log(err));
 
-app.use(morgan("tiny"));
+app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res, next) => {
-  return res.json("¡Hola!");
+const users = [
+  {id:1,name:"Usuario1"},
+  {id:2,name:"Usuario2"},
+  {id:3,name:"Usuario3"}
+];
+
+app.get("/users", (req, res) => {
+  return res.json(users);
 });
 
-// Captura el error 404 y lo envía al manejador de errores
-app.use((req, res, next) => {
-  const err = new Error("No encontrado");
-  err.status = 404;
-  return next(err);
+app.post("/athelete",async (req, res) => {
+  const athelete = req.body;
+  const newAthelete = new Athelete(athelete);
+  try{
+    await newAthelete.save();
+    res.status(201).json(newAthelete);
+
+  } catch (error){
+    res.status(500).json({message:error});
+  }
+  return res.json(newAthelete);
 });
 
-// Manejadores de errores
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  return res.json({
-    message: err.message,
-    /*
-     Si estamos en modo de desarrollo, incluye la traza de la pila (objeto de error completo)
-     de lo contrario, es un objeto vacío para que el usuario no vea todo eso
-    */
-    error: app.get("env") === "desarrollo" ? err : {}
-  });
-});
+app.get("/athelete",async (req,res)=>{
+  try{
+    const atheletes = await Athelete.find();
+    res.json(atheletes);
+    res.status(200).json(atheletes);
+
+  } catch (error){
+    res.status(500).json({message:error});
+  }
+  
+})
 
 app.listen(3000, () => {
   console.log("El servidor está escuchando en el puerto 3000");
