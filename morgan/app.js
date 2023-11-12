@@ -8,13 +8,13 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
 async function main() {
-  await mongoose.connect("mongodb+srv://yerayherreria:asier00ye@cluster0.hce5dpg.mongodb.net/");
+  await mongoose.connect("mongodb+srv://yerayherreria:yerayherreria@cluster0.hce5dpg.mongodb.net/");
   console.log("Conectado")
 }
 
 main().catch((err) => console.log(err));
 
-app.use(cors());
+
 app.use(express.json());
 
 const users = [
@@ -22,10 +22,10 @@ const users = [
   {id:2,name:"Usuario2"},
   {id:3,name:"Usuario3"}
 ];
-
+/*
 app.get("/users", (req, res) => {
   return res.json(users);
-});
+});*/
 
 app.post("/athelete",async (req, res) => {
   const athelete = req.body;
@@ -43,11 +43,44 @@ app.post("/athelete",async (req, res) => {
 app.get("/athelete",async (req,res)=>{
   try{
     const atheletes = await Athelete.find();
-    res.json(atheletes);
     res.status(200).json(atheletes);
 
   } catch (error){
     res.status(500).json({message:error});
+  } 
+  
+})
+
+app.delete("/athelete/:id",async (req,res)=>{
+  let id = req.params.id;
+
+  if(id){
+    try{
+      const atheletes = await Athelete.findByIdAndDelete(id);
+      res.status(200).json(atheletes);
+  
+    } catch (error){
+      res.status(500).json({message:error});
+    } 
+  } else {
+    res.status(400).json({message:"Id no válida"});
+  }
+  
+})
+
+app.put("/athelete/:id",async (req,res)=>{
+  let id = req.params.id;
+  let body = req.body;
+  if(id){
+    try{
+      const atheletes = await Athelete.findByIdAndUpdate(id,body);
+      res.status(200).json(atheletes);
+  
+    } catch (error){
+      res.status(500).json({message:error});
+    } 
+  } else {
+    res.status(400).json({message:"Id no válida"});
   }
   
 })

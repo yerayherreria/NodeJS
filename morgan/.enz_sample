@@ -1,2 +1,2 @@
-MONGO_CNN="mongodb+srv://yerayherreria:asier00ye@cluster0.hce5dpg.mongodb.net/";
+MONGO_CNN="mongodb+srv://yerayherreria:yerayherreria@cluster0.hce5dpg.mongodb.net/";
 PORT=3000;
