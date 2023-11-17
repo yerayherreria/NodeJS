@@ -1,0 +1,905 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ProjectThreeModel",
+    "dateExported": "2023-11-17T11:23:30.747Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "Disc",
+            "containerId": "",
+            "created": "2023-11-17T09:42:33.644Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "32785549-20d0-4106-80ba-a4240dac5c01",
+            "name": "Artist",
+            "containerId": "",
+            "created": "2023-11-17T09:43:04.148Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "1cccc8c3-f9cd-4e76-89a1-10ef88c80cea",
+            "name": "Song",
+            "containerId": "",
+            "created": "2023-11-17T09:43:11.658Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "b88423d9-717e-4dd3-b50a-0cd1eda1eaeb",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDisc",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-17T09:44:06.051Z",
+            "modified": "2023-11-17T09:48:22.794Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "3ac98ca0-0a95-4278-abf8-c6b48414c172",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDisc",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 15000,
+            "created": "2023-11-17T11:08:08.880Z",
+            "modified": "2023-11-17T11:09:30.371Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "0ebc74fb-30f5-4a3a-a01d-86420e533e9e",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNoName",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-17T09:49:37.900Z",
+            "modified": "2023-11-17T10:35:16.414Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "80fea211-1f97-4ed6-8ec4-de00223e15cf",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNoName",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-11-17T11:09:50.136Z",
+            "modified": "2023-11-17T11:10:10.168Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "1a859164-66d3-4aeb-9b36-d53060c50273",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNoNumSong",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-17T10:35:43.412Z",
+            "modified": "2023-11-17T10:37:42.245Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "504082fc-7773-488f-8745-36b90ad72d3d",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNoNumSong",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-17T11:11:28.760Z",
+            "modified": "2023-11-17T11:14:21.962Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "7d54ad35-89f0-48d8-9a33-abfd4bd97cfe",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNoCategory",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-11-17T10:39:21.193Z",
+            "modified": "2023-11-17T10:39:57.495Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "37a0d0c4-8093-48b2-8550-d35789c07fc7",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNoCategory",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 65000,
+            "created": "2023-11-17T11:12:24.360Z",
+            "modified": "2023-11-17T11:14:16.679Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "c205a888-b6ac-4beb-b542-0cf221e814ba",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNoDuration",
+            "url": "",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-11-17T10:40:36.872Z",
+            "modified": "2023-11-17T10:41:22.407Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "55324295-7563-4c88-b987-d903b57b86d6",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNoDuration",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 75000,
+            "created": "2023-11-17T11:13:44.113Z",
+            "modified": "2023-11-17T11:16:51.670Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "07e16b11-ac7f-4378-b7b2-6ab7d32a0471",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNameEmpty",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-11-17T10:42:48.797Z",
+            "modified": "2023-11-17T10:44:51.884Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "543b05f5-360c-4b9a-abe9-8a4fd9794a38",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNameEmpty",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 85000,
+            "created": "2023-11-17T11:14:52.401Z",
+            "modified": "2023-11-17T11:15:09.226Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "ec9d12fe-387d-4676-b288-10ea37d26fef",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscCategoryEmpty",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-11-17T10:44:30.043Z",
+            "modified": "2023-11-17T10:46:12.004Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "5d1c1938-f171-48e3-97ef-288a0a5ba0d0",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscCategoryEmpty",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 95000,
+            "created": "2023-11-17T11:17:05.793Z",
+            "modified": "2023-11-17T11:17:22.529Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "a549d9ee-48fa-471f-85e8-913494643a3d",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNumSongNegative",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-11-17T10:47:02.514Z",
+            "modified": "2023-11-17T10:47:56.872Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": -1,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "f97395fb-d547-40bf-9ba5-ccab4d7436fe",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNumSongNegative",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 105000,
+            "created": "2023-11-17T11:18:16.377Z",
+            "modified": "2023-11-17T11:18:35.490Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": -1,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "72c9f9c2-e048-4208-9490-df04ab36836d",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscDurationNegative",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-11-17T10:48:25.705Z",
+            "modified": "2023-11-17T10:50:05.438Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": -234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "1f843693-d560-4055-a324-3f8645cfeaa1",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscDurationNegative",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 115000,
+            "created": "2023-11-17T11:18:50.186Z",
+            "modified": "2023-11-17T11:19:15.722Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": -234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "78910be1-8b85-4e8e-8d61-90b7526bd78b",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNameInteger",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2023-11-17T10:50:35.113Z",
+            "modified": "2023-11-17T10:51:21.465Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":2,\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "65617b6f-235a-481f-bd27-d7daaf148177",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNameInteger",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 125000,
+            "created": "2023-11-17T11:19:36.714Z",
+            "modified": "2023-11-17T11:19:54.114Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":2,\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "20643da6-e65d-4dc1-808c-d8b161b38c04",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addCategoryInteger",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2023-11-17T10:51:59.769Z",
+            "modified": "2023-11-17T10:53:25.980Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": 2,\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "05bff684-c344-46eb-a486-83ca277c9540",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editCategoryInteger",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 135000,
+            "created": "2023-11-17T11:19:58.922Z",
+            "modified": "2023-11-17T11:20:13.531Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": 2,\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "7b3a8e6a-9dab-4c0d-9ed3-b8c8983131e2",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscDurationString",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2023-11-17T10:53:51.262Z",
+            "modified": "2023-11-17T10:54:45.468Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": \"3\",\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "ca4f246e-849a-4ddb-ad7d-51af6deedf89",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscDurationString Copy",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2023-11-17T11:21:03.402Z",
+            "modified": "2023-11-17T11:21:15.891Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": \"3\",\n  \"category\": \"Rock\",\n  \"duration\": 234\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "ef041442-bad8-48f0-84cf-b2272240d2ed",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "addDiscNumSongString",
+            "url": "/disc",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2023-11-17T10:56:31.154Z",
+            "modified": "2023-11-17T10:57:02.631Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": \"234\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "151c5257-ae03-4657-9114-ae71c02db266",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "editDiscNumSongString",
+            "url": "/disc/1",
+            "method": "PUT",
+            "sortNum": 165000,
+            "created": "2023-11-17T11:21:30.979Z",
+            "modified": "2023-11-17T11:21:42.173Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ola\",\n  \"numSong\": 3,\n  \"category\": \"Rock\",\n  \"duration\": \"234\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "1247d407-71b0-4745-9ad0-17c517db1dd5",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "viewDiscContent",
+            "url": "/disc",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2023-11-17T10:57:50.035Z",
+            "modified": "2023-11-17T10:58:09.230Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "98e5ba52-3bbb-4a66-b7ca-f8ff3979dca2",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "deleteDisc",
+            "url": "/disc/1",
+            "method": "DELETE",
+            "sortNum": 180000,
+            "created": "2023-11-17T11:04:41.812Z",
+            "modified": "2023-11-17T11:06:09.574Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "204"
+                }
+            ]
+        },
+        {
+            "_id": "c28b717a-2ac9-4056-8a7a-a54b41d317bc",
+            "colId": "134aa47c-f578-4415-9f0a-199e3d184fc0",
+            "containerId": "3fe79feb-4eb9-4160-b252-aa7f7a0d958a",
+            "name": "deleteDiscNoId",
+            "url": "/disc/",
+            "method": "DELETE",
+            "sortNum": 190000,
+            "created": "2023-11-17T11:07:04.932Z",
+            "modified": "2023-11-17T11:07:22.379Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "notequal",
+                    "value": "204"
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:3000"
+        }
+    }
+}
