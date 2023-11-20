@@ -1,23 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const DiscSchema = new Schema({
+const ArtistSchema = new Schema({
     name: {
         type:String,
-        required:true
-    },
-    numSong: {
-        type:Number,
         required:true
     },
     category: {
         type:String,
         required:true
     },
-    duration: {
-        type:Number,
+    nameDisc: {
+        type:String,
         required:true
     }
 })
 
-module.exports = mongoose.model("Disc",DiscSchema);
+module.exports = mongoose.model("Artist",ArtistSchema);

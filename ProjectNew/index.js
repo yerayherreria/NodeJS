@@ -15,7 +15,7 @@ main().catch((err) => console.log(err));
 
 app.use(cors());
 app.use(express.json());
-
+app.use(morgan("tiny"));
 app.use('/atheletes', atheleteRoutes);
 
 app.listen(3000, () => {
