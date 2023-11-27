@@ -33,6 +33,7 @@ router
     check('category','Category is string').isString(),
     check('numSong','Number of songs is string').isInt(),
     check('duration','Duration is string').isInt(),
+    check('name').custom(existsName),
     validationFields
 ],putDisc);  
 
