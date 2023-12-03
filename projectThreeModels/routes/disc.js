@@ -3,6 +3,7 @@ const router = express.Router();
 const {getDisc,addDisc,deleteDisc,putDisc} = require('../controllers/disc');
 const {check} = require("express-validator");
 const {validationFields} = require("../middlewares/validate-fields");
+const { existsName } = require("../helpers/db-validators");
 
 router
 .route("/")
@@ -16,6 +17,7 @@ router
     check('category','Category is string').isString(),
     check('numSong','Number of songs is number').isInt(),
     check('duration','Duration is number').isInt(),
+    check('name').custom(existsName),
     validationFields
 ],addDisc);
 
@@ -31,6 +33,7 @@ router
     check('category','Category is string').isString(),
     check('numSong','Number of songs is string').isInt(),
     check('duration','Duration is string').isInt(),
+    check('name').custom(existsName),
     validationFields
 ],putDisc);  
 
