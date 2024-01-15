@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-//const cors = require("cors");
+const cors = require("cors");
 const discRoutes = require("./routes/disc");
 const artistRoutes = require("./routes/artist");
 const songRoutes = require("./routes/song");
@@ -16,7 +16,7 @@ async function main() {
   
 main().catch((err) => console.log(err));
 
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(morgan("tiny"))
 app.use('/disc', discRoutes);
