@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {getDisc,addDisc,deleteDisc,putDisc} = require('../controllers/disc');
+const {getDisc,addDisc,deleteDisc,putDisc,getDiscById} = require('../controllers/disc');
 const {check} = require("express-validator");
 const {validationFields} = require("../middlewares/validate-fields");
 const { existsName } = require("../helpers/db-validators");
@@ -23,6 +23,7 @@ router
 
 router
 .route("/:id")
+.get(getDiscById)
 .delete(deleteDisc)
 .put([
     check('name','Name is required').not().isEmpty(),

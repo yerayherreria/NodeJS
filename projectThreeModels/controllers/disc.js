@@ -1,5 +1,17 @@
 const Disc = require("../models/disc");
 
+const getDiscById = async (req,res)=>{
+  let id = req.params.id;
+  try{
+    const discs = await Disc.findById(id);
+    res.status(200).json(discs);
+
+  } catch (error){
+    res.status(500).json({message:error});
+  } 
+  
+};
+
 const getDisc = async (req,res)=>{
     try{
       const discs = await Disc.find();
@@ -57,4 +69,4 @@ const putDisc = async (req,res)=>{
     
 };
 
-module.exports = {getDisc,addDisc,deleteDisc,putDisc};
+module.exports = {getDisc,addDisc,deleteDisc,putDisc,getDiscById};

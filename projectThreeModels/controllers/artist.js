@@ -1,5 +1,17 @@
 const Artist = require("../models/artist");
 
+const getArtistById = async (req,res)=>{
+  let id = req.params.id;
+  try{
+    const artist = await Artist.findById(id);
+    res.status(200).json(artist);
+
+  } catch (error){
+    res.status(500).json({message:error});
+  } 
+  
+};
+
 const getArtist = async (req,res)=>{
     try{
       const artist = await Artist.find();
@@ -57,4 +69,4 @@ const putArtist = async (req,res)=>{
     
 };
 
-module.exports = {getArtist,addArtist,deleteArtist,putArtist};
+module.exports = {getArtist,addArtist,deleteArtist,putArtist,getArtistById};
