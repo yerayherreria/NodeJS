@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {getArtist,addArtist,deleteArtist,putArtist} = require('../controllers/artist');
+const {getArtist,addArtist,deleteArtist,putArtist,getArtistById} = require('../controllers/artist');
 const {check} = require("express-validator");
 const {validationFields} = require("../middlewares/validate-fields");
 const { existsEmail } = require("../helpers/db-validators");
@@ -29,6 +29,7 @@ router
     check('category','Category is string').isString(),
     check('nameDisc','Name of disc is string').isString(),
     validationFields
-],putArtist);  
+],putArtist) 
+.get(getArtistById); 
 
 module.exports=router;
